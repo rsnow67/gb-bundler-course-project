@@ -1,0 +1,33 @@
+.header {
+	margin: 0 0 30px 0;
+	min-height: 100px;
+	display: flex;
+	align-items: center;
+	background-color: lightgray;
+}
+
+.container {
+	width: 1140px;
+	/* 1140 px*/
+	margin: 0 auto;
+}
+
+.timer-button {
+	margin: 0 20px 0 0;
+}
+
+.fieldset {
+	margin: 20px 0 20px 0;
+}
+
+.fieldset__legend {
+	margin: 0 0 10px 0;
+}
+
+.timer-form__start-button {
+	margin: 0 10px 0 0;
+}
+
+.result {
+	margin: 10px 0 0 0;
+}
