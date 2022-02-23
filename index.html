@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js"></script>
+    <script type="module" src="./js/main.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <button type="button" class="header__button timer-button" data-name="timer">Таймер</button>
+                <button type="button" class="header__button date-calc-button" data-name="date-calc">Калькулятор
+                    дат</button>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="timer container">
+            <form action="#" class="timer__form timer-form">
+                <h2 class="timer-form__title">Таймер</h2>
+                <fieldset class="timer-form__fieldset fieldset">
+                    <legend class="fieldset__legend">Выберите день:</legend>
+                    <input class="fieldset__input" type="date" name="timerDate" required />
+                </fieldset>
+                <fieldset class="timer-form__fieldset fieldset">
+                    <legend class="fieldset__legend">Выберите время:</legend>
+                    <input class="fieldset__input" type="time" name="timerTime" step="1" required />
+                </fieldset>
+                <button type="submit" class="timer-form__start-button">Старт</button>
+                <button type="button" class="timer-form__stop-button">Стоп</button>
+                <p class="timer-form__result result"></p>
+            </form>
+        </section>
+        <section class="date-calc container">
+            <form action="#" class="date-calc__form date-calc-form">
+                <h2 class="date-calc-form__title">Калькулятор дат</h2>
+                <fieldset class="date-calc-form__fieldset fieldset">
+                    <legend class="fieldset__legend">Первая дата:</legend>
+                    <input class="fieldset__input" type="date" name="firstDate" required />
+                </fieldset>
+                <fieldset class="date-calc-form__fieldset fieldset">
+                    <legend class="fieldset__legend">Вторая дата:</legend>
+                    <input class="fieldset__input" type="date" name="secondDate" required />
+                </fieldset>
+                <button type="submit" class="date-calc-form__result-button">Расчитать промежуток</button>
+                <p class="date-calc-form__result result"></p>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
