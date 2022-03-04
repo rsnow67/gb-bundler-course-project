@@ -1,4 +1,8 @@
 import {
+	Howl
+} from "howler";
+import sound from "../media/the-chemist-timer-bomb.mp3";
+import {
 	printTimerResult,
 	printTimerStop
 } from './printResult.js';
@@ -9,13 +13,13 @@ import {
 	getCurrentDate
 } from './getCurrentDate.js';
 
+export const timerSound = new Howl({
+	src: sound
+});
+
 export const initTimer = () => {
 	const timerForm = document.querySelector('.timer-form');
 	const stopButton = document.querySelector('.timer-form__stop-button');
-
-	stopButton.addEventListener('click', () => {
-		clearTimeout(timerId);
-	})
 
 	let timerId = null;
 	let flag = true;
@@ -55,4 +59,9 @@ export const initTimer = () => {
 			}, 1000);
 		}
 	}
+
+	stopButton.addEventListener('click', () => {
+		timerSound.stop();
+		clearTimeout(timerId);
+	})
 }
