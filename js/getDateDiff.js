@@ -1,10 +1,9 @@
 import {
     DateTime
-} from 'https://moment.github.io/luxon/es6/luxon.min.js';
-
-let sound = new Howl({
-    src: '../media/the-chemist-timer-bomb.mp3'
-});
+} from "luxon";
+import {
+    timerSound
+} from "./initTimer.js";
 
 export const getDateDiff = (dateFrom, dateTo, type) => {
     if (dateFrom < dateTo) {
@@ -19,12 +18,15 @@ export const getDateDiff = (dateFrom, dateTo, type) => {
     }
 
     if (type === 'timer') {
-        if ((dateFromObject - dateToObject) === 22000) {
-            sound.play();
+        const diff = dateFromObject - dateToObject;
+
+        if (diff <= 10000 && diff > 0) {
+            timerSound.play();
             return dateFromObject.diff(dateToObject, ['years', 'months', 'days', 'hours', 'minutes', 'seconds']).toObject();
         }
 
-        if ((dateFromObject - dateToObject) <= 0) {
+        if (diff <= 0) {
+            timerSound.stop();
             return false;
         }
     }
